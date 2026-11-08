@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512">
-  <title>Sage Iris: iris petals breathing</title>
+  <title>Evenglade: iris petals breathing</title>
   <!-- The app icon's master: three iris petals inside a ring, with the ring's fading echo, like a breath. -->
   <rect width="120" height="120" rx="28" fill="#8A9C80"/>
   <circle cx="60" cy="60" r="44" fill="none" stroke="#F7FAEC" stroke-opacity="0.25" stroke-width="1.5"/>
