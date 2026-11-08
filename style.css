@@ -1,0 +1,142 @@
+/* sageiris.com: one calm column, like the phone's own list. The hero is the home screen itself, set in
+   type, beside the real screen; sage bands mark the places the page speaks about the phone. */
+:root {
+  --page: #F7FAEC;        /* the app's cream */
+  --ink: #1F281C;         /* the app's dark ink */
+  --soft: #4E5A49;        /* quieter text, ink toward sage */
+  --sage: #8A9C80;        /* the app's sage ground */
+  --on-sage: #F7FAEC;
+  --sage-ink: #1F281C;    /* slashes and small text on sage */
+  --rule: #CFD6C4;
+  --panel: #ECF0E1;
+  --font-body: "Google Sans Flex", "Roboto", system-ui, sans-serif;
+  --font-mono: "Google Sans Code", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --measure: 64ch;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #161C15; --ink: #E9ECDF; --soft: #AEB8A6; --sage: #232C21; --on-sage: #E9ECDF;
+    --sage-ink: #8A9E82; --rule: #313833; --panel: #1C231B;
+    color-scheme: dark;
+  }
+}
+
+/* Each screenshot comes in the app's light and dark looks; the page shows the one that matches. */
+.phone .when-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  .phone .when-dark { display: block; }
+  .phone .when-light { display: none; }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--page); color: var(--ink); font: 400 17px/1.6 var(--font-body); margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: inherit; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--sage-ink); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 500; }
+h2 { font-size: clamp(26px, 3.4vw, 34px); line-height: 1.2; letter-spacing: -0.01em; }
+h3 { font-size: 18px; line-height: 1.35; font-weight: 600; }
+p { margin: 0; }
+.mono { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+.prose { max-width: var(--measure); display: grid; gap: 14px; }
+.soft { color: var(--soft); }
+section { padding-block: 72px; }
+section + section { border-top: 1px solid var(--rule); }
+
+/* Hero: the sage home screen. */
+.hero { background: var(--sage); color: var(--on-sage); padding-block: 56px 64px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 48px; align-items: center; }
+.hero .status { opacity: 0.9; }
+.hero .status span, .hero .slash { color: var(--sage-ink); }
+.hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; font-weight: 400; letter-spacing: -0.015em; margin-top: 28px; }
+.hero .lede { font-size: 19px; line-height: 1.55; margin-top: 20px; max-width: 34em; }
+.list { margin-top: 36px; display: grid; gap: 2px; font-weight: 300; font-size: clamp(24px, 3.2vw, 34px); line-height: 1.25; text-transform: uppercase; letter-spacing: 0.01em; }
+.list a { text-decoration: none; display: inline-block; }
+.list a:hover .name { text-decoration: underline; text-decoration-thickness: 1px; }
+.rule { margin-top: 18px; display: flex; align-items: center; gap: 10px; max-width: 520px; }
+.rule::before { content: ""; flex: 1; height: 2px; background: var(--sage-ink); opacity: 0.8; border-radius: 1px; }
+.rule svg { width: 22px; height: 22px; color: var(--sage-ink); flex: none; }
+.soon { margin-top: 22px; font-size: 16px; }
+.soon a { font-weight: 600; }
+.phone { width: 100%; max-width: 280px; aspect-ratio: 1080 / 2400; border-radius: 26px; border: 6px solid #12160F; overflow: hidden; background: #12160F; justify-self: center; box-shadow: 0 24px 50px -24px rgba(18, 22, 15, 0.55); }
+.phone img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* The features, each beside its screen. */
+.tour { display: grid; gap: 64px; margin-top: 48px; }
+.stop { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: center; }
+.stop .phone { max-width: 220px; border-width: 5px; border-radius: 22px; box-shadow: none; }
+.stop .text { display: grid; gap: 12px; max-width: 52ch; }
+.stop .text ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+/* Your look: every look in a row that pans, like the app's own picker. */
+.looks-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+.pan { display: flex; gap: 10px; flex: none; }
+.pan button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
+.pan button:hover:not(:disabled) { border-color: var(--soft); }
+.pan button:disabled { opacity: 0.35; cursor: default; }
+.pan svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rail { margin-top: 36px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: thin; padding-bottom: 14px; border-radius: 4px; }
+.rail:focus-visible { outline: 2px solid var(--sage-ink); outline-offset: 4px; }
+.rail ul { list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 184px; gap: 20px; }
+.rail li { scroll-snap-align: start; }
+.rail figure { margin: 0; display: grid; gap: 12px; }
+.rail .phone { max-width: none; border-width: 4px; border-radius: 18px; box-shadow: none; }
+.rail figcaption { display: grid; gap: 2px; font-size: 15px; line-height: 1.4; }
+.rail figcaption span { color: var(--soft); font-size: 14px; }
+
+/* What stays: a sage band. */
+.keep { background: var(--sage); color: var(--on-sage); }
+.keep .soft { color: var(--on-sage); opacity: 0.85; }
+.keep ul { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; max-width: 760px; }
+.keep li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; }
+.keep li .slash { color: var(--sage-ink); font-weight: 300; }
+
+/* Trying it early, and questions. */
+.early { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.address { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 8px; }
+.address a { font: 500 18px var(--font-mono); background: var(--panel); padding: 10px 14px; border-radius: 10px; text-decoration: none; }
+.address button { font: 500 15px var(--font-body); color: var(--page); background: var(--ink); border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; }
+.steps { list-style: none; counter-reset: step; margin: 6px 0 0; padding: 0; display: grid; gap: 16px; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 2.4em minmax(0, 1fr); column-gap: 10px; }
+.steps li::before { content: counter(step, decimal-leading-zero); font: 500 15px/1.7 var(--font-mono); color: var(--soft); }
+.steps b { font-weight: 600; }
+dl { margin: 0; display: grid; gap: 22px; }
+dt { font-weight: 600; }
+dd { margin: 4px 0 0; color: var(--soft); }
+
+footer { padding-block: 36px 48px; border-top: 1px solid var(--rule); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; color: var(--soft); font-size: 14px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+
+/* The privacy policy: a plain reading page. */
+.doc-head { background: var(--sage); color: var(--on-sage); padding-block: 40px 44px; }
+.doc-head a { text-decoration: none; }
+.doc-head h1 { font-size: clamp(32px, 4.4vw, 46px); font-weight: 400; line-height: 1.1; margin-top: 20px; }
+.doc-head p { margin-top: 12px; }
+.doc { padding-block: 48px 72px; }
+.doc .prose { gap: 16px; }
+.doc h2 { font-size: 24px; margin-top: 24px; }
+.doc ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.doc .summary { background: var(--panel); border-radius: 14px; padding: 20px 22px; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { background: var(--panel); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 820px) {
+  .hero .wrap, .early { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .hero .phone { max-width: 240px; }
+  .stop { grid-template-columns: 140px minmax(0, 1fr); gap: 22px; align-items: start; }
+  .stop .phone { max-width: 140px; border-width: 4px; border-radius: 16px; }
+}
+@media (max-width: 560px) {
+  section { padding-block: 52px; }
+  .keep ul { grid-template-columns: minmax(0, 1fr); }
+  .pan { display: none; }
+  .rail ul { grid-auto-columns: 150px; gap: 14px; }
+  .stop { grid-template-columns: minmax(0, 1fr); }
+  .stop .phone { max-width: 200px; border-radius: 20px; justify-self: start; }
+}

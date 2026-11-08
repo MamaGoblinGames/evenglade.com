@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512">
+  <title>Sage Iris: iris petals breathing</title>
+  <!-- The app icon's master: three iris petals inside a ring, with the ring's fading echo, like a breath. -->
+  <rect width="120" height="120" rx="28" fill="#8A9C80"/>
+  <circle cx="60" cy="60" r="44" fill="none" stroke="#F7FAEC" stroke-opacity="0.25" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="34" fill="none" stroke="#F7FAEC" stroke-width="2.5"/>
+  <g fill="#F7FAEC" fill-opacity="0.9">
+    <path d="M60 60 Q70 48 60 36 Q50 48 60 60 Z"/>
+    <path d="M60 60 Q70 48 60 36 Q50 48 60 60 Z" transform="rotate(120 60 60)"/>
+    <path d="M60 60 Q70 48 60 36 Q50 48 60 60 Z" transform="rotate(240 60 60)"/>
+  </g>
+</svg>
