@@ -102,6 +102,9 @@ section + section { border-top: 1px solid var(--rule); }
 .steps li { counter-increment: step; display: grid; grid-template-columns: 2.4em minmax(0, 1fr); column-gap: 10px; }
 .steps li::before { content: counter(step, decimal-leading-zero); font: 500 15px/1.7 var(--font-mono); color: var(--soft); }
 .steps b { font-weight: 600; }
+.steps .later span { color: var(--soft); }
+.steps .later b { color: var(--ink); }
+.steps em { display: block; margin-top: 4px; font: 500 12px/1.4 var(--font-mono); font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); }
 dl { margin: 0; display: grid; gap: 22px; }
 dt { font-weight: 600; }
 dd { margin: 4px 0 0; color: var(--soft); }
