@@ -34,8 +34,8 @@
       <h2>What stays on your phone</h2>
       <p>Evenglade keeps your choices so it can work: which apps are on your home screen, unlisted or set aside; your look; what you're making time for; your aims; which apps are back for now; and, with notification access on, how many notifications it quieted from each set-aside app over the past week. It also keeps your key:</p>
       <ul>
-        <li><b>The PIN you choose for the app</b> is stored only as a salted, one-way hash, so the PIN itself is never kept.</li>
-        <li><b>One-time codes</b> are optional. If you set them up, you scan a QR code from Evenglade with an authenticator app, such as Google Authenticator. That QR code holds a secret key that both apps use to make the same six-digit codes. Evenglade keeps its copy of the key on your phone and never sends it anywhere. Your authenticator app keeps its own copy.</li>
+        <li><b>The PIN you choose for the app</b> is stored only as a salted, one-way hash, mixed with a key held in your phone's secure hardware, so the PIN itself is never kept and a copy of Evenglade's files is no use on any other device.</li>
+        <li><b>One-time codes</b> are optional. If you set them up, you scan a QR code from Evenglade with an authenticator app, such as Google Authenticator. That QR code holds a secret key that both apps use to make the same six-digit codes. Evenglade keeps its copy of the key on your phone, locked with a key held in your phone's secure hardware, and never sends it anywhere. Your authenticator app keeps its own copy.</li>
       </ul>
       <p>None of this is included in Android's backups or in transfers to a new phone. It describes this phone only. Uninstalling Evenglade removes all of it.</p>
 
@@ -47,7 +47,7 @@
           <tbody>
             <tr><td>Usage access</td><td>Reads Android's own record of app use, the one Digital Wellbeing uses, to show your screen time, keep track of your aims, and notice when a set-aside app comes to the front.</td></tr>
             <tr><td>Accessibility service (optional)</td><td>Notices only when a different app comes to the front, so a set-aside app can be covered right away. It can't read what's on the screen or what you type.</td></tr>
-            <tr><td>Notification access (optional)</td><td>Checks which app each notification comes from, and clears it if that app is set aside. It never reads a notification's title or text. It keeps only a count of how many it cleared from each app over the past week, shown in Your apps, and older counts are deleted.</td></tr>
+            <tr><td>Notification access (optional)</td><td>Checks which app each notification comes from, and clears it if that app is set aside. Also checks which app is playing music or video, and pauses it if that app is set aside. It never reads a notification's title or text, or what's playing. It keeps only a count of how many it cleared from each app over the past week, shown in Your apps, and older counts are deleted.</td></tr>
             <tr><td>Notifications</td><td>Evenglade's own notes, such as the countdown while an app is back for a while.</td></tr>
             <tr><td>Wallpaper</td><td>Sets the wallpaper that matches your chosen look.</td></tr>
             <tr><td>Run at startup</td><td>Starts Evenglade's quiet work again after your phone restarts or Evenglade updates.</td></tr>
