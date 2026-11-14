@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512">
+  <title>Evenglade: a ring of trees around a clearing, breathing</title>
+  <!-- The app icon's master: a ring, like trees around a clearing, with the ring's fading echo, like a breath. -->
+  <rect width="120" height="120" rx="28" fill="#8A9C80"/>
+  <circle cx="60" cy="60" r="44" fill="none" stroke="#F7FAEC" stroke-opacity="0.25" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="34" fill="none" stroke="#F7FAEC" stroke-width="2.5"/>
+</svg>

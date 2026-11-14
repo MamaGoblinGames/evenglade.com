@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · Evenglade</title>
+<meta name="description" content="Evenglade collects no data. It has no internet access, no account, no ads and no analytics, so everything it knows stays on your phone.">
+<meta name="theme-color" content="#8A9C80">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://evenglade.com/privacy">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://evenglade.com/privacy">
+<meta property="og:title" content="Privacy · Evenglade">
+<meta property="og:description" content="Evenglade collects no data. Everything it knows stays on your phone.">
+<meta property="og:image" content="https://evenglade.com/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Evenglade: a calmer phone, with space for your life. Set aside the apps that take you out of the now.">
+<meta property="og:site_name" content="Evenglade">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&family=Google+Sans+Code:wght@400..700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="doc-head">
+  <div class="wrap">
+    <a class="mono" href="/">Evenglade <span aria-hidden="true">//</span> A calmer phone</a>
+    <h1>Privacy</h1>
+    <p>Effective November 9, 2026</p>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="wrap">
+    <div class="prose">
+      <div class="summary prose">
+        <h2 style="margin-top: 0;">In short</h2>
+        <p>Evenglade collects no data about you. It has no internet access at all: Android doesn't let it reach the internet, because it never asks to. There's no account, no ads, no analytics and no crash reporting. Everything Evenglade knows stays on your phone.</p>
+      </div>
+
+      <h2>What stays on your phone</h2>
+      <p>Evenglade keeps your choices so it can work: which apps are on your home screen, unlisted or set aside; your look; what you're making time for; your aims; which apps are back for now; and, with notification access on, how many notifications it quieted from each set-aside app over the past week. It also keeps your key:</p>
+      <ul>
+        <li><b>The PIN you choose for the app</b> is stored only as a salted, one-way hash, mixed with a key held in your phone's secure hardware, so the PIN itself is never kept and a copy of Evenglade's files is no use on any other device.</li>
+        <li><b>One-time codes</b> are optional. If you set them up, you scan a QR code from Evenglade with an authenticator app, such as Google Authenticator. That QR code holds a secret key that both apps use to make the same six-digit codes. Evenglade keeps its copy of the key on your phone, locked with a key held in your phone's secure hardware, and never sends it anywhere. Your authenticator app keeps its own copy.</li>
+      </ul>
+      <p>None of this is included in Android's backups or in transfers to a new phone. It describes this phone only. Uninstalling Evenglade removes all of it.</p>
+
+      <h2>What Evenglade uses on your phone, and why</h2>
+      <p>Each of these is used on the phone itself. Nothing is sent anywhere.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Permission</th><th>What it's used for</th></tr></thead>
+          <tbody>
+            <tr><td>Usage access</td><td>Reads Android's own record of app use, the one Digital Wellbeing uses, to show your screen time, keep track of your aims, and notice when a set-aside app comes to the front.</td></tr>
+            <tr><td>Accessibility service (optional)</td><td>Notices only when a different app comes to the front, so a set-aside app can be covered right away. It can't read what's on the screen or what you type.</td></tr>
+            <tr><td>Notification access (optional)</td><td>Checks which app each notification comes from, and clears it if that app is set aside. Also checks which app is playing music or video, and pauses it if that app is set aside. It never reads a notification's title or text, or what's playing. It keeps only a count of how many it cleared from each app over the past week, shown in Your apps, and older counts are deleted.</td></tr>
+            <tr><td>Notifications</td><td>Evenglade's own notes, such as the countdown while an app is back for a while.</td></tr>
+            <tr><td>Wallpaper</td><td>Sets the wallpaper that matches your chosen look.</td></tr>
+            <tr><td>Run at startup</td><td>Starts Evenglade's quiet work again after your phone restarts or Evenglade updates.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Sharing</h2>
+      <p>Evenglade doesn't share, sell or transfer any data, because it doesn't collect any. A trusted person who keeps your key, or reads you a one-time code, never sees your apps, your screen time or anything else you do.</p>
+
+      <h2>If you write to us</h2>
+      <p>If you email us, we use your message and address only to reply, and to add you to a test if you ask to join one. We don't share them.</p>
+
+      <h2>This website</h2>
+      <p>evenglade.com uses no cookies and no analytics. Its fonts come from Google Fonts, so your browser asks Google for them, and like any website, the service that hosts it may keep standard logs of requests.</p>
+
+      <h2>Children</h2>
+      <p>Evenglade doesn't collect information from anyone, including children.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new version will be posted here with a new effective date. If Evenglade ever needed to collect anything, it would ask first, and this page would say what and why.</p>
+
+      <h2>Contact</h2>
+      <p>Questions are welcome: <a href="mailto:hello@evenglade.com">hello@evenglade.com</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Evenglade, by <a href="https://redwinged.com">Redwinged Studio</a></span>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/guides">Guides</a>
+      <a href="mailto:hello@evenglade.com">hello@evenglade.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
