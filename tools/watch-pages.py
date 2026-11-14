@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Writes watch/<guide>.html, a page with just one guide's video, for each guide in guides.html.
+"""Writes docs/watch/<guide>.html, a page with just one guide's video, for each guide in docs/guides.html.
 
 Evenglade's walkthrough links each step to the guide that shows it, and on a phone a page with one
 video, ready to play, is easier than the whole guides page. Run this after changing guides.html:
@@ -12,8 +12,10 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-GUIDES = (ROOT / "guides.html").read_text()
-OUT = ROOT / "watch"
+# The published site is docs/; the rest of the repository, this script with it, isn't served.
+SITE = ROOT / "docs"
+GUIDES = (SITE / "guides.html").read_text()
+OUT = SITE / "watch"
 
 PAGE = """<!doctype html>
 <html lang="en">
@@ -33,7 +35,7 @@ PAGE = """<!doctype html>
 </head>
 <body>
 
-<!-- Written by tools/watch-pages.py from guides.html; change that, then run it again. -->
+<!-- Written by tools/watch-pages.py from docs/guides.html; change that, then run it again. -->
 <main class="watch">
   <div class="wrap">
     <a class="mono soft" href="/guides">Evenglade <span aria-hidden="true">//</span> Guides</a>
@@ -69,7 +71,7 @@ def main():
         plain = html.escape(html.unescape(re.sub(r"<[^>]+>", "", description)), quote=True)
         page = PAGE.format(slug=slug, title=title, length=length, description=plain, text=text)
         (OUT / f"{slug}.html").write_text(page)
-        print(f"watch/{slug}.html")
+        print(f"docs/watch/{slug}.html")
 
 
 if __name__ == "__main__":
