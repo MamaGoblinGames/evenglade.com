@@ -163,6 +163,7 @@ tr:last-child td { border-bottom: 0; }
   .watch video { width: auto; max-width: 100%; max-height: 70svh; justify-self: center; }
 }
 
+
 @media (max-width: 820px) {
   .guide { grid-template-columns: 220px minmax(0, 1fr); gap: 24px; }
 }
